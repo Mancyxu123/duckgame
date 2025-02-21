@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鸭子点击叫声</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #87CEEB;
+        }
+        .duck {
+            width: 150px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="duck.png" alt="小鸭子" class="duck" id="duck">
+    <!-- 使用本地音频文件 -->
+    <audio id="quack-sound" src="quack.mp3"></audio>
+
+    <script>
+        document.getElementById("duck").addEventListener("click", function() {
+            let quackSound = document.getElementById("quack-sound");
+            quackSound.currentTime = 0; // 重新播放
+            quackSound.play();
+        });
+    </script>
+</body>
+</html>
